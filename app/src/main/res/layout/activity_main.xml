@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gin.xjh.usebmob.MainActivity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp"
+        android:hint="Your Name" />
+
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Feedback"
+        android:lines="3" />
+
+    <Button
+        android:id="@+id/Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/feedback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/Query_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="Query all" />
+
+
+    <EditText
+        android:id="@+id/query_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Query_all"
+        android:layout_below="@+id/Query_all"
+        android:layout_marginTop="12dp"
+        android:ems="12"
+        android:hint="Name" />
+
+    <Button
+        android:id="@+id/Query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/query_et"
+        android:layout_alignEnd="@+id/Query_all"
+        android:text="Query" />
+
+    <Button
+        android:id="@+id/PushAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Query"
+        android:layout_alignStart="@+id/query_et"
+        android:layout_below="@+id/query_et"
+        android:layout_marginTop="10dp"
+        android:text="PushAll" />
+
+</RelativeLayout>
