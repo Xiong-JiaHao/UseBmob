@@ -21,11 +21,12 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.PushListener;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    private EditText mName, mFeedback, mQuery;
-    private Button Submit, Query_all, Query, PushAll;
+    private EditText mName, mFeedback, mQuery,mUpdate,mUpdateFeedback,mDelete;
+    private Button Submit, Query_all, Query,Update,Delete, PushAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Query_all = findViewById(R.id.Query_all);
         Query = findViewById(R.id.Query);
         mQuery = findViewById(R.id.query_et);
+        Update = findViewById(R.id.Update);
+        mUpdate = findViewById(R.id.update_et);
+        mUpdateFeedback = findViewById(R.id.update_feedback);
+        Delete = findViewById(R.id.Delete);
+        mDelete = findViewById(R.id.delete_et);
         PushAll = findViewById(R.id.PushAll);
     }
 
@@ -62,6 +68,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Query_all.setOnClickListener(this);
         Query.setOnClickListener(this);
         PushAll.setOnClickListener(this);
+        Update.setOnClickListener(this);
+        Delete.setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +137,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             builder.create().show();
                         } else {
                             Toast.makeText(MainActivity.this, "Query Failure", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                break;
+            case R.id.Update:
+                String updateId = mUpdate.getText().toString();
+                String newfeedback = mUpdateFeedback.getText().toString();
+                Feedback update = new Feedback();
+                update.setFeedback(newfeedback);
+                update.update(updateId, new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+                        if(e==null){
+                            Toast.makeText(MainActivity.this, "Update Success", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                break;
+            case R.id.Delete:
+                String deleteId = mDelete.getText().toString();
+                Feedback delete = new Feedback();
+                delete.setObjectId(deleteId);
+                delete.delete(new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+                        if(e==null){
+                            Toast.makeText(MainActivity.this, "Delete Success", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Delete Failure", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

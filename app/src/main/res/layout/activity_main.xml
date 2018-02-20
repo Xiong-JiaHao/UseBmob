@@ -24,8 +24,7 @@
         android:layout_below="@+id/name"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:hint="Feedback"
-        android:lines="3" />
+        android:hint="Feedback"/>
 
     <Button
         android:id="@+id/Submit"
@@ -68,13 +67,61 @@
         android:layout_alignEnd="@+id/Query_all"
         android:text="Query" />
 
+
+    <EditText
+        android:id="@+id/update_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Query_all"
+        android:layout_below="@+id/Query"
+        android:layout_marginTop="12dp"
+        android:ems="12"
+        android:hint="ObjectId" />
+
+    <EditText
+        android:id="@+id/update_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Query_all"
+        android:layout_below="@+id/update_et"
+        android:ems="12"
+        android:hint="Feedback" />
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/delete_et"
+        android:layout_alignEnd="@+id/Query_all"
+        android:layout_alignTop="@+id/update_et"
+        android:text="Update" />
+
+    <EditText
+        android:id="@+id/delete_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Query_all"
+        android:layout_below="@+id/update_feedback"
+        android:layout_marginTop="12dp"
+        android:ems="12"
+        android:hint="ObjectId" />
+
+
+    <Button
+        android:id="@+id/Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/delete_et"
+        android:layout_alignEnd="@+id/Update"
+        android:text="Delete" />
+
     <Button
         android:id="@+id/PushAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/Query"
         android:layout_alignStart="@+id/query_et"
-        android:layout_below="@+id/query_et"
+        android:layout_below="@+id/Delete"
         android:layout_marginTop="10dp"
         android:text="PushAll" />
 
